@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Official website of Drakonik, indie rock artist. New album Hit The Stars out 21.08.26.">
+<style>body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+<title>Drakonik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&family=Permanent+Marker&family=Special+Elite&display=swap">
+<style>
+/* Layout: a scroll-driven stage show. Floating glass pill menu over a full-bleed concert hero, giant wide type that slides with the scroll, a word-by-word lighting bio, a pinned 3D cube of single covers, then the album, press, interview, fans and campaign. Single dark look by choice. */
+:root {
+  --ink: #08080a;
+  --ink-2: #111014;
+  --ink-3: #1d1b21;
+  --paper: #f1ede8;
+  --dim: #9c97a3;
+  --red: #e0242d;
+  --red-deep: #6e0f14;
+  --blue: #8ab8ff;
+  --blue-deep: #0f2245;
+  --line: rgba(241,237,232,.13);
+  --glass: rgba(241,237,232,.08);
+  --f-wide: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --f-marker: "Permanent Marker", "Marker Felt", cursive;
+  --f-type: "Special Elite", "Courier New", monospace;
+  --gut: max(16px, env(safe-area-inset-left, 0px));
+  --gut-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body { background: var(--ink); color: var(--paper); font: 400 16px/1.65 var(--f-body); overflow-x: clip; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--ink); }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 70; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+p, h1, h2, h3 { margin: 0; }
+h1, h2, h3 { text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut-r); }
+.mono { font: 400 13px/1.6 var(--f-mono); letter-spacing: .04em; }
+.eyebrow { font: 600 12px/1 var(--f-mono); letter-spacing: .2em; text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--red); }
+.h-wide { font: 900 clamp(44px, 8vw, 112px)/.92 var(--f-wide); font-stretch: 125%; letter-spacing: -.02em; text-transform: lowercase; }
+.h-wide .r { color: var(--red); }
+.h-wide .b { color: var(--blue); }
+section { position: relative; padding-block: clamp(72px, 10vw, 140px); }
+
+/* ---------- Nav: floating glass pills ---------- */
+.nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 50; padding: 14px var(--gut-r) 0 var(--gut); pointer-events: none; }
+.nav-in { display: flex; align-items: center; gap: 8px; max-width: 1200px; margin: 0 auto; }
+.pill { pointer-events: auto; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; font: 600 14px/1 var(--f-body); padding: 11px 16px; border-radius: 999px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); transition: background .25s, color .25s, border-color .25s; }
+.pill:hover { background: rgba(241,237,232,.18); }
+.logo-pill { gap: 0; font: 900 15px/1 var(--f-wide); font-stretch: 125%; letter-spacing: .04em; }
+.logo-pill b { color: var(--red); }
+.pills { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; min-width: 0; flex: 1; pointer-events: auto; }
+.pills::-webkit-scrollbar { display: none; }
+.pills .pill { background: rgba(8,8,10,.35); }
+.pills .pill.active { background: var(--paper); color: var(--ink); }
+.cta { background: var(--blue); color: var(--ink); border-color: transparent; }
+.cta:hover { background: #b5d1ff; }
+.progress { position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); height: 3px; z-index: 55; pointer-events: none; }
+.progress i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--red), var(--blue)); }
+@media (max-width: 760px) { .cta { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; min-height: clamp(600px, 92svh, 900px); display: grid; align-content: end; overflow: hidden; padding-top: 110px; }
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(1.15) contrast(1.08) blur(.4px); transform: scale(1.06); will-change: transform; }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(ellipse at 70% 20%, rgba(224,36,45,.25), transparent 55%),
+  linear-gradient(180deg, rgba(8,8,10,.55) 0%, rgba(8,8,10,.25) 35%, rgba(8,8,10,.75) 75%, var(--ink) 100%); }
+.hero-mid { position: relative; display: grid; gap: 22px; justify-items: center; text-align: center; padding-bottom: 28px; }
+.hero-logo { width: min(560px, 86vw); mix-blend-mode: screen; }
+.genres { font: 600 12px/1 var(--f-mono); letter-spacing: .3em; text-transform: uppercase; color: var(--paper); }
+.genres span { color: var(--red); margin-inline: 10px; }
+.tagline { max-width: 46ch; font: 400 clamp(14px, 1.6vw, 17px)/1.7 var(--f-mono); color: var(--paper); text-shadow: 0 2px 20px rgba(0,0,0,.8); }
+.giant-row { position: relative; z-index: 1; overflow: hidden; padding-bottom: 6px; }
+.giant { font: 900 clamp(84px, 19vw, 300px)/.85 var(--f-wide); font-stretch: 125%; letter-spacing: -.035em; white-space: nowrap; text-transform: lowercase; will-change: transform; padding-left: var(--gut); }
+.giant .r { color: var(--red); }
+.giant .o { color: transparent; -webkit-text-stroke: 2px var(--paper); }
+
+/* ---------- Marquee ---------- */
+.marquee { background: var(--red); color: var(--paper); overflow: hidden; border-block: 1px solid rgba(0,0,0,.4); transform: rotate(-1.2deg); margin-block: 6px; position: relative; z-index: 2; }
+.marquee.blue { background: var(--blue); color: var(--ink); transform: rotate(1deg); }
+.marquee-track { display: flex; width: max-content; animation: slide 28s linear infinite; }
+.marquee.blue .marquee-track { animation-direction: reverse; }
+.marquee span { font: 900 clamp(18px, 2.4vw, 28px)/1 var(--f-wide); font-stretch: 125%; text-transform: uppercase; padding: 14px 22px; white-space: nowrap; }
+.marquee span::after { content: "✦"; margin-left: 44px; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---------- Word-by-word reveal ---------- */
+.reveal { font: 800 clamp(26px, 4.2vw, 56px)/1.15 var(--f-wide); font-stretch: 110%; letter-spacing: -.01em; max-width: 22ch; }
+.reveal .w { opacity: .18; transition: opacity .25s, color .25s; }
+.reveal .w.on { opacity: 1; }
+.reveal .w.hl.on { color: var(--red); }
+.about-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(48px, 7vw, 90px); border-top: 1px solid var(--line); }
+.about-meta div { padding: 18px 18px 18px 0; border-right: 1px solid var(--line); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.about-meta div + div { padding-left: 18px; }
+.about-meta div:last-child { border-right: 0; }
+.about-meta dt { font: 600 11px/1 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--dim); }
+.about-meta dd { margin: 0; font-weight: 600; }
+.rise { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); margin-top: clamp(48px, 7vw, 90px); align-items: start; }
+.rise p { color: var(--dim); max-width: 58ch; }
+.rise p strong { color: var(--paper); }
+.label-card { display: flex; gap: 20px; align-items: center; padding: 22px; border-radius: 18px; background: var(--ink-2); border: 1px solid var(--line); }
+.label-mark { font: 900 28px/1 var(--f-wide); font-stretch: 125%; letter-spacing: .04em; flex: none; }
+.label-mark i { color: var(--red); font-style: normal; }
+.label-mark small { display: block; font: 600 10px/1 var(--f-mono); letter-spacing: .5em; margin-top: 8px; color: var(--dim); }
+.label-card p { color: var(--dim); font-size: 14px; }
+
+/* ---------- Pinned 3D cube ---------- */
+.cube-sec { height: 420svh; padding: 0; }
+.cube-sticky { position: sticky; top: 0; height: 100svh; display: grid; align-items: center; overflow: hidden; }
+.cube-sticky::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, var(--glow, rgba(224,36,45,.22)), transparent 60%); transition: background .6s; }
+.cube-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 80px); align-items: center; width: 100%; }
+.scene { --s: clamp(200px, 30vw, 380px); width: var(--s); height: var(--s); perspective: 1400px; justify-self: center; }
+.cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; will-change: transform; }
+.cf { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1px solid rgba(241,237,232,.25); overflow: hidden; }
+.cf img { width: 100%; height: 100%; object-fit: cover; }
+.cf.f1 { transform: rotateY(0deg) translateZ(calc(var(--s) / 2)); }
+.cf.f2 { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+.cf.f3 { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.cf.f4 { transform: rotateY(270deg) translateZ(calc(var(--s) / 2)); }
+.cf.top, .cf.bot { background: linear-gradient(135deg, var(--red-deep), var(--blue-deep)); display: grid; place-items: center; font: 900 calc(var(--s) * .12)/1 var(--f-wide); font-stretch: 125%; letter-spacing: .04em; }
+.cf.top { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+.cf.bot { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+.cube-text { display: grid; gap: 18px; align-content: center; min-width: 0; position: relative; }
+.cube-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.cnum { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--paper); display: grid; place-items: center; font: 600 14px/1 var(--f-mono); flex: none; }
+.cube-title { font: 900 clamp(40px, 6.4vw, 92px)/.92 var(--f-wide); font-stretch: 125%; letter-spacing: -.025em; text-transform: lowercase; color: var(--blue); }
+.cube-desc { max-width: 44ch; color: var(--paper); font-size: 17px; }
+.cube-lyric { font: 400 clamp(18px, 2vw, 22px)/1.35 var(--f-marker); color: var(--red); }
+.swap { transition: opacity .35s, transform .35s; }
+.swap.out { opacity: 0; transform: translateY(14px); }
+.dots { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+.dot { all: unset; cursor: pointer; font: 600 11px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; padding: 9px 12px; border-radius: 999px; border: 1px solid var(--line); color: var(--dim); transition: background .25s, color .25s; }
+.dot[aria-current="true"] { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.dot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.scroll-hint { position: absolute; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); font: 600 11px/1 var(--f-mono); letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+
+/* ---------- Lyrics ---------- */
+.lyrics-sec { text-align: left; }
+.lyrics-sec .reveal { font-family: var(--f-marker); font-weight: 400; font-stretch: 100%; max-width: 26ch; line-height: 1.25; }
+.lyric-tag { margin-top: 26px; }
+
+/* ---------- Album ---------- */
+.album { background: linear-gradient(180deg, var(--ink) 0%, var(--blue-deep) 30%, var(--ink) 100%); overflow: hidden; }
+.album-giant { font: 900 clamp(70px, 15vw, 230px)/.82 var(--f-wide); font-stretch: 125%; letter-spacing: -.04em; text-transform: lowercase; white-space: nowrap; will-change: transform; }
+.album-giant .o { color: transparent; -webkit-text-stroke: 2px var(--blue); }
+.album-giant .b { color: var(--blue); }
+.album-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 5vw, 72px); align-items: start; margin-top: clamp(36px, 5vw, 64px); }
+.album-cover { width: 100%; max-width: 480px; aspect-ratio: 308/302; object-fit: cover; border-radius: 6px; box-shadow: 0 0 0 1px rgba(138,184,255,.4), 0 30px 90px rgba(138,184,255,.3); transition: transform .5s; }
+.album-cover:hover { transform: rotate(-2deg) scale(1.02); }
+.album-copy { display: grid; gap: 18px; min-width: 0; }
+.album-copy > p { color: var(--paper); font-size: 17px; max-width: 54ch; }
+.release { display: inline-flex; align-items: center; gap: 14px; justify-self: start; padding: 12px 20px 12px 12px; border-radius: 999px; background: var(--blue); color: var(--ink); }
+.release i { width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: var(--blue); display: grid; place-items: center; font: 600 11px/1 var(--f-mono); font-style: normal; }
+.release b { font: 900 20px/1 var(--f-wide); font-stretch: 125%; }
+.tracks { list-style: none; counter-reset: t; padding: 0; margin: 6px 0 0; border-top: 1px solid var(--line); }
+.tracks li { counter-increment: t; border-bottom: 1px solid var(--line); }
+.tracks button { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; width: 100%; padding: 12px 10px; cursor: pointer; font-variant-numeric: tabular-nums; transition: background .2s, padding .25s; }
+.tracks button::before { content: counter(t, decimal-leading-zero); font: 400 13px/1.7 var(--f-mono); color: var(--blue); }
+.tracks button:hover { background: rgba(138,184,255,.08); padding-left: 16px; }
+.tracks button[aria-pressed="true"] { background: rgba(138,184,255,.16); box-shadow: inset 3px 0 0 var(--blue); }
+.tracks button:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.tracks .len { color: var(--dim); font: 400 13px/1.7 var(--f-mono); }
+.hit { font: 600 9px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; background: var(--red); color: var(--paper); padding: 4px 7px; border-radius: 99px; margin-left: 10px; vertical-align: 2px; }
+.track-info { padding: 18px 20px; border-radius: 16px; background: rgba(138,184,255,.1); border: 1px solid rgba(138,184,255,.25); display: grid; gap: 6px; }
+.track-info small { font: 600 11px/1 var(--f-mono); letter-spacing: .16em; color: var(--blue); text-transform: uppercase; }
+.track-info b { font: 800 22px/1.2 var(--f-wide); font-stretch: 110%; }
+.track-info p { font-size: 14px; color: var(--dim); }
+
+/* ---------- Section heads ---------- */
+.sec-head { display: grid; gap: 18px; margin-bottom: clamp(32px, 5vw, 60px); }
+
+/* ---------- Press ---------- */
+.press-doc { background: var(--paper); color: #1a1718; max-width: 860px; padding: clamp(24px, 5vw, 60px); font: 400 16px/1.75 var(--f-type); border-radius: 4px; box-shadow: 0 40px 80px rgba(0,0,0,.5); transform: rotate(-.6deg); transition: transform .5s; }
+.press-doc:hover { transform: rotate(0); }
+.press-doc .hdr { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-bottom: 2px solid #1a1718; padding-bottom: 12px; margin-bottom: 22px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.press-doc h3 { font: 900 clamp(22px, 3vw, 32px)/1.15 var(--f-wide); font-stretch: 110%; margin-bottom: 8px; color: #1a1718; }
+.press-doc .sub { font: 600 16px/1.4 var(--f-body); color: #a3141b; margin-bottom: 20px; }
+.press-doc p + p { margin-top: 14px; }
+.press-doc .end { text-align: center; margin-top: 24px; letter-spacing: .3em; }
+.press-doc .contact { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #1a1718; font-size: 14px; }
+
+/* ---------- Interview ---------- */
+.iv-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.iv-side { position: sticky; top: 110px; display: grid; gap: 20px; }
+.iv-side .intro { color: var(--dim); max-width: 44ch; }
+.pull { font: 400 clamp(26px, 3.4vw, 40px)/1.2 var(--f-marker); color: var(--paper); }
+.pull span { color: var(--red); }
+.qa-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.ghost { all: unset; cursor: pointer; font: 600 12px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 11px 16px; transition: background .2s, color .2s; }
+.ghost:hover { background: var(--paper); color: var(--ink); }
+.ghost:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.qa { border-top: 1px solid var(--line); min-width: 0; }
+.qa details { border-bottom: 1px solid var(--line); }
+.qa summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; font: 700 clamp(17px, 1.8vw, 21px)/1.3 var(--f-wide); font-stretch: 105%; transition: color .2s; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; width: 38px; height: 38px; flex: none; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font: 400 20px/1 var(--f-mono); transition: transform .3s, background .3s, color .3s; }
+.qa details[open] summary::after { transform: rotate(45deg); background: var(--red); border-color: var(--red); color: var(--paper); }
+.qa summary:hover { color: var(--blue); }
+.qa .a { padding: 0 54px 24px 0; color: var(--dim); }
+.qa .a b { font: 600 11px/1 var(--f-mono); letter-spacing: .14em; color: var(--red); margin-right: 6px; }
+
+/* ---------- Social ---------- */
+.feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.post { background: var(--ink-2); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; align-content: start; min-width: 0; transition: transform .35s, border-color .35s; }
+.post:hover { transform: translateY(-6px) rotate(-.6deg); border-color: rgba(241,237,232,.3); }
+.post:nth-child(2):hover { transform: translateY(-6px) rotate(.6deg); }
+.post-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; }
+.avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--red); display: grid; place-items: center; font: 900 14px/1 var(--f-wide); color: var(--paper); flex: none; }
+.post-head b { font-size: 14px; }
+.post-head small { display: block; font-size: 12px; color: var(--dim); }
+.platform { font: 600 10px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin-left: auto; border: 1px solid var(--line); padding: 5px 8px; border-radius: 99px; }
+.post-img { aspect-ratio: 1; width: 100%; object-fit: cover; }
+.post-txt { aspect-ratio: 1; display: grid; place-items: center; text-align: center; padding: 24px; font: 900 clamp(22px, 2.6vw, 30px)/1.05 var(--f-wide); font-stretch: 120%; text-transform: lowercase; }
+.post-txt.r { background: var(--red); }
+.post-txt.b { background: var(--blue-deep); color: var(--blue); }
+.post-body { padding: 14px 16px 18px; font-size: 14px; display: grid; gap: 6px; }
+.post-body .stats { font-weight: 600; font-size: 13px; color: var(--dim); }
+.post-body .tags { color: var(--blue); }
+.like { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font: 600 13px/1 var(--f-body); justify-self: start; }
+.like .h { font-size: 22px; line-height: 1; color: var(--dim); transition: color .2s; }
+.like[aria-pressed="true"] .h { color: var(--red); animation: pop .35s; }
+@keyframes pop { 50% { transform: scale(1.45); } }
+.like:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* ---------- Quiz ---------- */
+.quiz { background: var(--ink-2); border: 1px solid var(--line); border-radius: 24px; padding: clamp(22px, 4vw, 44px); max-width: 860px; }
+.qz-step { font: 600 12px/1.2 var(--f-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+.qz-bar { height: 4px; border-radius: 4px; background: var(--ink-3); margin: 14px 0 24px; overflow: hidden; }
+.qz-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), var(--blue)); transition: width .35s; }
+.qz-q { font: 800 clamp(22px, 3vw, 32px)/1.15 var(--f-wide); font-stretch: 110%; margin-bottom: 22px; }
+.qz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.qz-opt { all: unset; box-sizing: border-box; cursor: pointer; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; font: 600 15px/1.35 var(--f-body); transition: border-color .2s, background .2s, transform .2s; }
+.qz-opt:hover { border-color: var(--red); background: rgba(224,36,45,.12); transform: translateY(-2px); }
+.qz-opt:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.qz-result { display: grid; grid-template-columns: 200px 1fr; gap: 28px; align-items: center; }
+.qz-result img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; transform: rotate(-3deg); animation: drop .55s cubic-bezier(.3,1.4,.5,1); }
+@keyframes drop { from { transform: rotate(-14deg) scale(.6); opacity: 0; } }
+.qz-result > div { display: grid; gap: 12px; min-width: 0; }
+.qz-title { font: 900 clamp(30px, 4.4vw, 52px)/.95 var(--f-wide); font-stretch: 125%; text-transform: lowercase; color: var(--red); }
+.qz-result .ghost { justify-self: start; }
+
+/* ---------- Merch ---------- */
+.merch-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 18px; }
+.demo-note { font: 600 11px/1.5 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--dim); border: 1px dashed var(--line); border-radius: 999px; padding: 9px 14px; }
+.shop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.prod { position: relative; background: var(--ink-2); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: grid; align-content: start; min-width: 0; transition: border-color .3s; }
+.prod:hover { border-color: rgba(241,237,232,.3); }
+.art { --c: #141216; color: var(--c); aspect-ratio: 1; display: grid; place-items: center; background: radial-gradient(circle at 50% 45%, rgba(241,237,232,.14), transparent 62%), var(--ink-3); position: relative; overflow: hidden; }
+.art svg { width: 78%; height: 78%; transition: transform .5s cubic-bezier(.3,.7,.2,1), color .3s; filter: drop-shadow(0 18px 24px rgba(0,0,0,.55)); }
+.prod:hover .art svg { transform: rotate(-4deg) scale(1.06); }
+.art .vinyl { width: 66%; aspect-ratio: 1; position: relative; transition: transform .5s; }
+.art .sleeve { position: absolute; inset: 0; border-radius: 4px; overflow: hidden; box-shadow: 0 18px 30px rgba(0,0,0,.55); z-index: 1; }
+.art .sleeve img { width: 100%; height: 100%; object-fit: cover; }
+.art .disc { position: absolute; inset: 4%; border-radius: 50%; background: repeating-radial-gradient(circle, #5b9be8 0 1px, #3a6fbf 1px 3px); box-shadow: 0 10px 24px rgba(0,0,0,.5); display: grid; place-items: center; transition: transform .6s cubic-bezier(.3,.7,.2,1); }
+.art .disc::after { content: ""; width: 34%; aspect-ratio: 1; border-radius: 50%; background: url("img/cover-hts.jpg") center / cover; box-shadow: 0 0 0 2px var(--ink); }
+.prod:hover .disc { transform: translateX(34%) rotate(160deg); }
+.art .poster { width: 58%; aspect-ratio: 3/4; position: relative; background: url("img/hero.jpg") 45% center / cover; box-shadow: 0 18px 30px rgba(0,0,0,.6); transform: rotate(-3deg); transition: transform .5s; display: grid; align-content: end; padding: 8%; }
+.prod:hover .poster { transform: rotate(1deg) scale(1.05); }
+.art .poster::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(110,15,20,.92)); }
+.art .poster b { position: relative; font: 900 clamp(14px, 1.8vw, 22px)/.9 var(--f-wide); font-stretch: 125%; text-transform: lowercase; color: var(--paper); }
+.art .poster small { position: relative; font: 600 8px/1.4 var(--f-mono); letter-spacing: .14em; color: var(--paper); margin-top: 6px; }
+.badge { position: absolute; top: 14px; left: 14px; z-index: 2; font: 600 10px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; padding: 7px 10px; border-radius: 999px; background: var(--red); color: var(--paper); }
+.badge.b { background: var(--blue); color: var(--ink); }
+.prod-body { padding: 18px 18px 20px; display: grid; gap: 12px; }
+.prod-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.prod-top h3 { font: 800 18px/1.2 var(--f-wide); font-stretch: 110%; }
+.price { font: 600 16px/1 var(--f-mono); color: var(--blue); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.prod-desc { color: var(--dim); font-size: 14px; }
+.opts { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; min-height: 34px; }
+.swatches, .sizes { display: flex; gap: 6px; flex-wrap: wrap; }
+.sw { all: unset; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; background: var(--sw); box-shadow: 0 0 0 1px rgba(241,237,232,.35); transition: box-shadow .2s; }
+.sw[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink-2), 0 0 0 4px var(--paper); }
+.sz { all: unset; cursor: pointer; min-width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; border: 1px solid var(--line); font: 600 12px/1 var(--f-mono); transition: background .2s, color .2s; }
+.sz[aria-pressed="true"] { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.sw:focus-visible, .sz:focus-visible, .add:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.add { all: unset; box-sizing: border-box; cursor: pointer; text-align: center; padding: 14px; border-radius: 999px; background: var(--paper); color: var(--ink); font: 700 14px/1 var(--f-body); transition: background .2s, color .2s, transform .15s; }
+.add:hover { background: var(--red); color: var(--paper); }
+.add:active { transform: scale(.97); }
+.add.done { background: var(--blue); color: var(--ink); }
+.bag-pill { background: var(--red); border-color: transparent; color: var(--paper); cursor: pointer; }
+.bag-pill:hover { background: #ff3a43; }
+.bag-pill .count { min-width: 20px; height: 20px; border-radius: 99px; background: var(--paper); color: var(--ink); display: grid; place-items: center; font: 700 11px/1 var(--f-mono); padding: 0 5px; }
+.bag-pill.bump { animation: pop .4s; }
+
+/* Bag drawer */
+.bag-shade { position: fixed; inset: 0; z-index: 80; background: rgba(0,0,0,.55); backdrop-filter: blur(3px); animation: fade .25s; }
+.bag { position: fixed; top: 0; right: 0; bottom: 0; z-index: 81; width: min(420px, 100%); background: var(--ink-2); border-left: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr auto; padding: calc(20px + env(safe-area-inset-top, 0px)) calc(20px + env(safe-area-inset-right, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)) 20px; animation: slidein .35s cubic-bezier(.3,.7,.2,1); }
+@keyframes fade { from { opacity: 0; } }
+@keyframes slidein { from { transform: translateX(100%); } }
+.bag-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.bag-top h2 { font: 900 26px/1 var(--f-wide); font-stretch: 125%; text-transform: lowercase; }
+.bag-items { overflow-y: auto; padding-block: 8px; min-height: 0; }
+.bag-empty { color: var(--dim); padding-block: 30px; text-align: center; }
+.bag-item { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.bag-item b { font-weight: 700; }
+.bag-item small { color: var(--dim); font: 400 12px/1.4 var(--f-mono); }
+.bag-item .price { align-self: start; }
+.qty { display: flex; align-items: center; gap: 8px; grid-column: 1 / -1; margin-top: 4px; }
+.qty button { all: unset; cursor: pointer; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font: 600 14px/1 var(--f-mono); }
+.qty button:hover { background: var(--paper); color: var(--ink); }
+.qty button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.qty span { font: 600 13px/1 var(--f-mono); min-width: 18px; text-align: center; }
+.bag-foot { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 12px; }
+.bag-total { display: flex; justify-content: space-between; font: 800 20px/1 var(--f-wide); font-variant-numeric: tabular-nums; }
+.bag-msg { font-size: 13px; color: var(--blue); min-height: 1.4em; }
+
+/* ---------- Campaign ---------- */
+.dates { border-top: 1px solid var(--line); }
+.date-row { display: grid; grid-template-columns: 180px 1fr 1fr; gap: 20px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid var(--line); position: relative; isolation: isolate; }
+.date-row::before { content: ""; position: absolute; inset: 0; background: var(--red); transform: scaleY(0); transform-origin: bottom; transition: transform .35s cubic-bezier(.3,.7,.2,1); z-index: -1; }
+.date-row:hover::before { transform: scaleY(1); }
+.date-row:last-child::before { background: var(--blue); }
+.date-row:last-child:hover { color: var(--ink); }
+.date-row .d { font: 600 13px/1.4 var(--f-mono); letter-spacing: .12em; color: var(--dim); padding-left: 8px; }
+.date-row:hover .d { color: inherit; }
+.date-row h3 { font: 900 clamp(22px, 3.2vw, 40px)/1 var(--f-wide); font-stretch: 125%; text-transform: lowercase; letter-spacing: -.01em; }
+.date-row p { color: var(--dim); padding-right: 8px; }
+.date-row:hover p { color: inherit; }
+.plan { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: clamp(40px, 6vw, 72px); }
+.plan-col { border-radius: 20px; padding: 24px; background: var(--ink-2); border: 1px solid var(--line); display: grid; gap: 14px; align-content: start; }
+.plan-col h3 { font: 900 26px/1 var(--f-wide); font-stretch: 125%; text-transform: lowercase; }
+.plan-col:nth-child(1) h3 { color: var(--red); }
+.plan-col:nth-child(3) h3 { color: var(--blue); }
+.plan-col ul { margin: 0; padding-left: 18px; display: grid; gap: 9px; color: var(--dim); }
+.plan-col li b { color: var(--paper); }
+.plan-col li::marker { color: var(--red); }
+
+/* ---------- Footer ---------- */
+footer { padding-block: 56px calc(28px + env(safe-area-inset-bottom, 0px)); overflow: hidden; border-top: 1px solid var(--line); }
+.foot-giant { font: 900 clamp(64px, 17.5vw, 270px)/.8 var(--f-wide); font-stretch: 125%; letter-spacing: -.04em; text-align: center; color: transparent; -webkit-text-stroke: 1.5px rgba(241,237,232,.35); transition: color .5s; white-space: nowrap; }
+.foot-giant:hover { color: var(--red); -webkit-text-stroke-color: var(--red); }
+.foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 28px; font: 600 12px/1.4 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+
+.to-top { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 45; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: var(--paper); text-decoration: none; font: 600 20px/1 var(--f-mono); box-shadow: 0 10px 30px rgba(224,36,45,.4); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .25s, transform .25s, background .2s; }
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+.to-top:hover { background: var(--blue); color: var(--ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .cube-grid, .album-grid, .iv-grid, .rise { grid-template-columns: 1fr; }
+  .feed, .plan, .shop { grid-template-columns: 1fr 1fr; }
+  .iv-side { position: static; }
+  .cube-grid { gap: 22px; }
+  .scene { --s: clamp(170px, 42vw, 260px); }
+  .cube-text { gap: 10px; text-align: left; }
+  .cube-desc { font-size: 15px; }
+  .date-row { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 560px) {
+  .feed, .plan, .qz-opts, .qz-result, .shop { grid-template-columns: 1fr; }
+  .about-meta { grid-template-columns: 1fr; }
+  .about-meta div { border-right: 0; padding-left: 0 !important; border-top: 1px solid var(--line); }
+  .about-meta div:first-child { border-top: 0; }
+  .qz-result img { max-width: 200px; }
+  .qa .a { padding-right: 0; }
+  .cube-title { font-size: clamp(34px, 11vw, 48px); }
+  .cube-lyric { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Sections">
+  <div class="nav-in">
+    <a class="pill logo-pill" href="#home">DRAK<b>Ø</b>NIK</a>
+    <ul class="pills">
+      <li><a class="pill" href="#about">About</a></li>
+      <li><a class="pill" href="#music">Singles</a></li>
+      <li><a class="pill" href="#album">Album</a></li>
+      <li><a class="pill" href="#press">Press</a></li>
+      <li><a class="pill" href="#interview">Interview</a></li>
+      <li><a class="pill" href="#social">Social</a></li>
+      <li><a class="pill" href="#merch">Merch</a></li>
+      <li><a class="pill" href="#quiz">Quiz</a></li>
+      <li><a class="pill" href="#campaign">Campaign</a></li>
+    </ul>
+    <button type="button" class="pill bag-pill" id="bag-open" aria-label="Open shopping bag, 0 items">Bag <span class="count" id="bag-count">0</span></button>
+    <a class="pill cta" href="#album">Hit The Stars ↗</a>
+  </div>
+</nav>
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-bg"><img id="hero-img" src="img/hero.jpg" alt="Drakonik singing under red stage lights"></div>
+  <div class="hero-mid wrap">
+    <img class="hero-logo" src="img/logo.jpg" alt="Drakonik">
+    <p class="genres">Indie rock<span>//</span>Alternative<span>//</span>Modern rock</p>
+    <p class="tagline">Built on raw energy and honest lyrics. Loud, self-made and born on the internet. Music for the ones who feel too much.</p>
+  </div>
+  <div class="giant-row" aria-hidden="true">
+    <p class="giant" id="giant">feel <span class="r">too</span> much <span class="o">feel</span> <span class="r">too</span> much</p>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>New album Hit The Stars</span><span>Out 21.08.26</span><span>Indie rock</span><span>Strixx Records</span><span>Stop, Drop, and Roll</span>
+  <span>New album Hit The Stars</span><span>Out 21.08.26</span><span>Indie rock</span><span>Strixx Records</span><span>Stop, Drop, and Roll</span>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">About Drakonik</p></div>
+    <p class="reveal" data-hl="Drakonik,loud,honest,his">Drakonik is a rising indie rock artist with a raw sound, introspective lyrics and a self-made, internet-born story. He blends the grit of alternative rock with modern indie to make music that's loud, honest and completely his own.</p>
+
+    <dl class="about-meta">
+      <div><dt>Real name</dt><dd>Undisclosed</dd></div>
+      <div><dt>Look</dt><dd>Black beanie, oversized hoodie, battered guitar</dd></div>
+      <div><dt>Sounds like</dt><dd>Big riffs, quiet verses, shout-along choruses</dd></div>    </dl>
+
+    <div class="rise">
+      <div class="sec-head" style="margin:0">
+        <p class="eyebrow">The rise</p>
+        <p>Drakonik first gained attention in late 2025 when he independently released his single <strong>“Stop, Drop, and Roll”</strong> on a streaming platform. The track's explosive energy and hook-driven chorus went viral on social media, collecting <strong>millions of streams within weeks</strong> and making him one of the internet's most talked-about indie artists.</p>
+      </div>
+      <div class="label-card">
+        <div class="label-mark">STRI<i>XX</i><small>RECORDS</small></div>
+        <p>In early 2026 Drakonik signed with Strixx Records, an independent label known for championing bold, original voices in modern rock.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SINGLES CUBE -->
+<section class="cube-sec" id="music" aria-label="The singles">
+  <div class="cube-sticky" id="cube-sticky">
+    <div class="wrap cube-grid">
+      <div class="scene">
+        <div class="cube" id="cube">
+          <div class="cf f1"><img src="img/cover-sdr.jpg" alt="Stop, Drop, and Roll cover"></div>
+          <div class="cf f2"><img src="img/cover-wsw.jpg" alt="Why Say Why? cover"></div>
+          <div class="cf f3"><img src="img/cover-af.jpg" alt="American Fever cover"></div>
+          <div class="cf f4"><img src="img/cover-hts.jpg" alt="Hit The Stars cover"></div>
+          <div class="cf top">DRKNK</div>
+          <div class="cf bot">DRKNK</div>
+        </div>
+      </div>
+      <div class="cube-text">
+        <div class="cube-head"><p class="eyebrow swap" id="c-kicker">The breakout hit · 2025</p><span class="cnum" id="c-num">01</span></div>
+        <h2 class="cube-title swap" id="c-title">stop, drop, and roll</h2>
+        <p class="cube-desc swap" id="c-desc">High-energy, rebellious and full of adrenaline. The song that started everything when it went viral in late 2025.</p>
+        <p class="cube-lyric swap" id="c-lyric">“I'd rather feel it all than feel nothing at all.”</p>
+        <div class="dots" id="dots">
+          <button class="dot" type="button" aria-current="true">Stop, Drop</button>
+          <button class="dot" type="button" aria-current="false">Why Say Why?</button>
+          <button class="dot" type="button" aria-current="false">American Fever</button>
+          <button class="dot" type="button" aria-current="false">Hit The Stars</button>
+        </div>
+      </div>
+    </div>
+    <p class="scroll-hint">Scroll to spin the cube</p>
+  </div>
+</section>
+
+<!-- LYRICS -->
+<section class="lyrics-sec" id="lyrics">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Chorus · Stop, Drop, and Roll</p></div>
+    <p class="reveal" data-hl="stop,drop,roll,feel">The world's on fire and I'm standing in the smoke. They told me keep it quiet but I never learned to cope. So stop, drop, and roll, let it burn out of control. I'd rather feel it all than feel nothing at all.</p>
+  </div>
+</section>
+
+<div class="marquee blue" aria-hidden="true"><div class="marquee-track">
+  <span>Hit The Stars</span><span>10 songs</span><span>21 August 2026</span><span>Blue vinyl</span><span>Rooftop show</span>
+  <span>Hit The Stars</span><span>10 songs</span><span>21 August 2026</span><span>Blue vinyl</span><span>Rooftop show</span>
+</div></div>
+
+<!-- ALBUM -->
+<section class="album" id="album">
+  <div class="wrap">
+    <p class="eyebrow">New album announcement</p>
+  </div>
+  <p class="album-giant" id="album-giant" aria-label="Hit The Stars"><span class="o">hit the</span> <span class="b">stars</span> <span class="o">hit the</span> <span class="b">stars</span></p>
+  <div class="wrap album-grid">
+    <div class="album-copy">
+      <img class="album-cover" src="img/cover-hts.jpg" alt="Hit The Stars album cover: a figure on a rooftop under a starry blue sky with shooting stars">
+      <p>Drakonik's highly anticipated new album marks a major new chapter. It's a bold, expansive collection of songs about ambition, escape and the search for something bigger, pushing his sound to new heights while keeping the raw emotion that made him a global sensation.</p>
+      <div class="release"><i>OUT</i><b>21 AUG 2026</b></div>
+    </div>
+    <div class="album-copy">
+      <div class="track-info" aria-live="polite">
+        <small id="ti-num">Track 01 · Click any song</small>
+        <b id="ti-title">Hit The Stars</b>
+        <p id="ti-desc">The title track. It starts with one guitar on a rooftop and explodes into the biggest chorus on the album.</p>
+      </div>
+      <ol class="tracks">
+        <li><button type="button" aria-pressed="true" data-title="Hit The Stars" data-desc="The title track. It starts with one guitar on a rooftop and explodes into the biggest chorus on the album."><span>Hit The Stars</span><span class="len">3:42</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Stop, Drop, and Roll" data-desc="The viral hit that started everything, re-recorded with a full band for the album."><span>Stop, Drop, and Roll<span class="hit">Single</span></span><span class="len">2:58</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Rooftop Static" data-desc="Late-night radio noise and a racing beat. A song about not being able to switch your brain off."><span>Rooftop Static</span><span class="len">3:21</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Why Say Why?" data-desc="The emotional centre of the album. A song full of questions with no easy answers."><span>Why Say Why?<span class="hit">Single</span></span><span class="len">4:05</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Gravity Was Never My Friend" data-desc="A fast, funny song about always falling: off skateboards, out of love and behind in class."><span>Gravity Was Never My Friend</span><span class="len">3:33</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="American Fever" data-desc="An anthem about ambition, adverts and a world that never slows down."><span>American Fever<span class="hit">Single</span></span><span class="len">3:47</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Paper Crowns" data-desc="About people who pretend to be in charge. Short, loud and angry."><span>Paper Crowns</span><span class="len">3:10</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Midnight Signal" data-desc="A slow-burning song about sending a message to someone who never replies."><span>Midnight Signal</span><span class="len">3:58</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Too Much" data-desc="Inspired by his motto. For everyone who has ever been told they feel too much."><span>Too Much</span><span class="len">3:26</span></button></li>
+        <li><button type="button" aria-pressed="false" data-title="Shooting Star (Don't Wait For Me)" data-desc="The closing track. Quiet piano and guitar, then one last huge chorus."><span>Shooting Star (Don't Wait For Me)</span><span class="len">4:40</span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Press release</p>
+      <h2 class="h-wide">for the <span class="r">news</span></h2>
+    </div>
+    <article class="press-doc">
+      <div class="hdr"><span>For immediate release</span><span>Strixx Records · 1 June 2026</span></div>
+      <h3>Viral rock newcomer Drakonik announces debut album “Hit The Stars”</h3>
+      <p class="sub">Internet-born indie rock artist signs to Strixx Records. Album out 21 August 2026.</p>
+      <p>Strixx Records is proud to announce <strong>Hit The Stars</strong>, the debut album from indie rock artist Drakonik, released worldwide on 21 August 2026 on all major streaming platforms, CD and limited-edition blue vinyl.</p>
+      <p>Drakonik first gained attention in late 2025 when he independently released his single “Stop, Drop, and Roll”. The track went viral on social media and reached millions of streams within weeks. He followed it with the emotional “Why Say Why?” and, in 2026, the anthemic “American Fever”.</p>
+      <p>His sound blends the grit of alternative rock with modern indie influences: heavy guitar riffs, honest, introspective lyrics and choruses made to be shouted back at him. His fans know him by his trademark black beanie and hoodie, and by his motto: “Music for the ones who feel too much.”</p>
+      <p>The ten-track album explores ambition, escape and the search for something bigger. “This album is about looking up when everything around you is pulling you down,” says Drakonik. “I wrote most of it on a rooftop at 3 a.m.”</p>
+      <p>Drakonik will celebrate the release with a live-streamed rooftop concert on release night, followed by a 20-date tour.</p>
+      <p class="end">###</p>
+      <p class="contact">Press contact: Strixx Records Press Office<br>Interviews, photos and early album copies are available on request.</p>
+    </article>
+  </div>
+</section>
+
+<!-- INTERVIEW -->
+<section id="interview">
+  <div class="wrap iv-grid">
+    <div class="iv-side">
+      <p class="eyebrow">Exclusive interview</p>
+      <h2 class="h-wide">in his <span class="r">own</span> words</h2>
+      <p class="intro">Drakonik rarely talks to the press. We met him backstage before his sold-out show to talk about going viral, keeping his name secret and the new album.</p>
+      <p class="pull">“I'd rather be <span>too loud</span> than not heard at all.”</p>
+      <div class="qa-tools"><button type="button" class="ghost" id="qa-all">Open all answers</button></div>
+    </div>
+    <div class="qa">
+      <details open><summary>Where does the name Drakonik come from?</summary><p class="a"><b>DRAKONIK</b>It comes from “draconian”, which means really strict rules. I grew up feeling like there were rules for everything: how to act, what to feel. The name reminds me to break them.</p></details>
+      <details><summary>Why keep your real name a secret?</summary><p class="a"><b>DRAKONIK</b>I want people to focus on the music, not on me. Drakonik is the part of me that's brave enough to get on stage. The other guy just likes video games and cereal.</p></details>
+      <details><summary>“Stop, Drop, and Roll” went viral almost overnight. How did that feel?</summary><p class="a"><b>DRAKONIK</b>Honestly? Terrifying. I uploaded it at 2 a.m. and went to sleep. When I woke up my phone wouldn't stop buzzing. A week later strangers were sending me videos of themselves screaming the chorus in their cars.</p></details>
+      <details><summary>Your motto is “music for the ones who feel too much.” What does that mean?</summary><p class="a"><b>DRAKONIK</b>Some people get told they're too sensitive, too emotional, too much. I was one of them. My songs say: that's not a weakness. Feel it, scream it, turn it into something.</p></details>
+      <details><summary>What is “Hit The Stars” about?</summary><p class="a"><b>DRAKONIK</b>Ambition and escape. It's about sitting on a rooftop, looking at a city that doesn't notice you, and deciding to aim higher anyway.</p></details>
+      <details><summary>What's next?</summary><p class="a"><b>DRAKONIK</b>A rooftop concert on release night, then the tour. I just want to be in the same room as the people who've been listening all this time.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Social media</p>
+      <h2 class="h-wide">join the <span class="r">noise</span></h2>
+    </div>
+    <div class="feed">
+      <article class="post">
+        <div class="post-head"><span class="avatar">D</span><div><b>drakonik</b><small>Instagram</small></div><span class="platform">Post</span></div>
+        <img class="post-img" src="img/cover-hts.jpg" alt="Hit The Stars album cover">
+        <div class="post-body"><p class="stats">12,904 comments</p><p><b>drakonik</b> It's real. HIT THE STARS. 10 songs. 21.08.26. I wrote this one for every kid who ever looked up and wanted more. 🌠</p><p class="tags">#HitTheStars #Drakonik #StrixxRecords</p></div>
+      </article>
+      <article class="post">
+        <div class="post-head"><span class="avatar">D</span><div><b>@drakonik</b><small>TikTok</small></div><span class="platform">Video</span></div>
+        <div class="post-txt r">duet this: scream the chorus as loud as you can</div>
+        <div class="post-body"><p class="stats">1.2M views · 84K duets</p><p>#StopDropRollChallenge: show me where you'd scream it. Best one gets a signed guitar. 🎸🔥</p><p class="tags">#StopDropRoll #fyp #indierock</p></div>
+      </article>
+      <article class="post">
+        <div class="post-head"><span class="avatar">D</span><div><b>drakonik</b><small>Instagram</small></div><span class="platform">Story</span></div>
+        <div class="post-txt b">rooftop show. release night. location drops in 24 hrs.</div>
+        <div class="post-body"><p class="stats">Story · 2h ago</p><p>Free live-stream for everyone who can't make it. Turn your notifications on. ⭐</p><p class="tags">#HitTheStarsLive</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch">
+  <div class="wrap">
+    <div class="sec-head merch-head">
+      <div style="display:grid;gap:18px">
+        <p class="eyebrow">Official merch</p>
+        <h2 class="h-wide">wear the <span class="r">noise</span></h2>
+      </div>
+      <p class="demo-note">Demo shop · school project · no real orders</p>
+    </div>
+    <div class="shop">
+
+      <article class="prod" data-name="Hit The Stars Hoodie" data-price="45">
+        <span class="badge">Best seller</span>
+        <div class="art" style="--c:#141216">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path fill="currentColor" d="M68 32 Q100 8 132 32 L156 40 L186 122 L166 130 L148 86 L148 182 L52 182 L52 86 L34 130 L14 122 L44 40 Z"/>
+            <path d="M74 34 Q100 70 126 34" fill="none" stroke="rgba(241,237,232,.25)" stroke-width="3"/>
+            <path d="M92 52 L90 76 M108 52 L110 76" stroke="rgba(241,237,232,.5)" stroke-width="2"/>
+            <rect x="70" y="140" width="60" height="28" rx="8" fill="none" stroke="rgba(241,237,232,.2)" stroke-width="2"/>
+            <image href="img/cover-hts.jpg" x="80" y="86" width="40" height="40"/>
+            <text x="100" y="138" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="9" letter-spacing="1" fill="#f1ede8">HIT THE STARS</text>
+          </svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Hit The Stars Hoodie</h3><span class="price">$45</span></div>
+          <p class="prod-desc">Heavyweight oversized hoodie with the album art on the chest. Just like the one Drakonik wears on stage.</p>
+          <div class="opts">
+            <div class="swatches" role="group" aria-label="Colour"><button type="button" class="sw" style="--sw:#141216" data-color="Black" data-hex="#141216" aria-pressed="true" aria-label="Black"></button><button type="button" class="sw" style="--sw:#b3161d" data-color="Red" data-hex="#b3161d" aria-pressed="false" aria-label="Red"></button><button type="button" class="sw" style="--sw:#2c4f8c" data-color="Blue" data-hex="#2c4f8c" aria-pressed="false" aria-label="Blue"></button></div>
+            <div class="sizes" role="group" aria-label="Size"><button type="button" class="sz" aria-pressed="false">S</button><button type="button" class="sz" aria-pressed="true">M</button><button type="button" class="sz" aria-pressed="false">L</button><button type="button" class="sz" aria-pressed="false">XL</button></div>
+          </div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="prod" data-name="Stop, Drop, and Roll Tee" data-price="25">
+        <div class="art" style="--c:#b3161d">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path fill="currentColor" d="M70 30 L48 36 L16 62 L34 88 L52 74 L52 178 L148 178 L148 74 L166 88 L184 62 L152 36 L130 30 Q100 52 70 30 Z"/>
+            <path d="M70 30 Q100 52 130 30" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="3"/>
+            <image href="img/cover-sdr.jpg" x="74" y="66" width="52" height="52"/>
+            <text x="100" y="136" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="12" letter-spacing="1.5" fill="#f1ede8">DRAKØNIK</text>
+            <text x="100" y="150" text-anchor="middle" font-family="monospace" font-size="6" letter-spacing="1.5" fill="#f1ede8">FEEL TOO MUCH</text>
+          </svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Stop, Drop, and Roll Tee</h3><span class="price">$25</span></div>
+          <p class="prod-desc">Soft cotton T-shirt with the breakout single's cover and the “feel too much” motto.</p>
+          <div class="opts">
+            <div class="swatches" role="group" aria-label="Colour"><button type="button" class="sw" style="--sw:#b3161d" data-color="Red" data-hex="#b3161d" aria-pressed="true" aria-label="Red"></button><button type="button" class="sw" style="--sw:#141216" data-color="Black" data-hex="#141216" aria-pressed="false" aria-label="Black"></button><button type="button" class="sw" style="--sw:#d9d4cc" data-color="White" data-hex="#d9d4cc" aria-pressed="false" aria-label="White"></button></div>
+            <div class="sizes" role="group" aria-label="Size"><button type="button" class="sz" aria-pressed="false">S</button><button type="button" class="sz" aria-pressed="true">M</button><button type="button" class="sz" aria-pressed="false">L</button><button type="button" class="sz" aria-pressed="false">XL</button></div>
+          </div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="prod" data-name="Signature Beanie" data-price="18">
+        <span class="badge b">As worn on stage</span>
+        <div class="art" style="--c:#141216">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path fill="currentColor" d="M44 132 Q40 48 100 44 Q160 48 156 132 Z"/>
+            <path d="M70 60 Q66 96 66 128 M100 46 L100 128 M130 60 Q134 96 134 128" fill="none" stroke="rgba(241,237,232,.12)" stroke-width="3"/>
+            <rect x="36" y="118" width="128" height="40" rx="8" fill="currentColor"/>
+            <path d="M44 126 L44 150 M56 126 L56 150 M68 126 L68 150 M132 126 L132 150 M144 126 L144 150 M156 126 L156 150" stroke="rgba(241,237,232,.12)" stroke-width="3"/>
+            <rect x="76" y="126" width="48" height="24" rx="3" fill="#e0242d"/>
+            <text x="100" y="142" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="8" letter-spacing=".5" fill="#f1ede8">DRKNK</text>
+          </svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Signature Beanie</h3><span class="price">$18</span></div>
+          <p class="prod-desc">The trademark black beanie with a red DRKNK patch. One size fits all.</p>
+          <div class="opts">
+            <div class="swatches" role="group" aria-label="Colour"><button type="button" class="sw" style="--sw:#141216" data-color="Black" data-hex="#141216" aria-pressed="true" aria-label="Black"></button><button type="button" class="sw" style="--sw:#3b3840" data-color="Charcoal" data-hex="#3b3840" aria-pressed="false" aria-label="Charcoal"></button><button type="button" class="sw" style="--sw:#2c4f8c" data-color="Blue" data-hex="#2c4f8c" aria-pressed="false" aria-label="Blue"></button></div>
+            <span class="price" style="color:var(--dim);font-size:12px">ONE SIZE</span>
+          </div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="prod" data-name="Hit The Stars Blue Vinyl" data-price="28">
+        <span class="badge b">Limited edition</span>
+        <div class="art"><div class="vinyl"><div class="disc"></div><div class="sleeve"><img src="img/cover-hts.jpg" alt=""></div></div></div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Hit The Stars Blue Vinyl</h3><span class="price">$28</span></div>
+          <p class="prod-desc">The full 10-track album on limited-edition blue vinyl. Hover to slide the record out.</p>
+          <div class="opts"><span class="price" style="color:var(--dim);font-size:12px">12" LP · 10 TRACKS</span></div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="prod" data-name="Rooftop Show Poster" data-price="12">
+        <div class="art"><div class="poster"><b>drakonik live</b><small>HIT THE STARS · ROOFTOP SHOW · 21.08.26</small></div></div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Rooftop Show Poster</h3><span class="price">$12</span></div>
+          <p class="prod-desc">A3 poster to remember the release-night rooftop concert.</p>
+          <div class="opts"><span class="price" style="color:var(--dim);font-size:12px">A3 · 297 × 420 MM</span></div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+      <article class="prod" data-name="Feel Too Much Tote Bag" data-price="15">
+        <div class="art" style="--c:#d9d4cc">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path d="M74 70 Q74 24 100 24 Q126 24 126 70" fill="none" stroke="currentColor" stroke-width="8"/>
+            <path fill="currentColor" d="M46 66 L154 66 L160 182 L40 182 Z"/>
+            <text x="100" y="112" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#e0242d">feel</text>
+            <text x="100" y="134" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#e0242d">too</text>
+            <text x="100" y="156" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#e0242d">much</text>
+          </svg>
+        </div>
+        <div class="prod-body">
+          <div class="prod-top"><h3>Feel Too Much Tote Bag</h3><span class="price">$15</span></div>
+          <p class="prod-desc">Strong canvas tote with the motto in big red letters. Fits a laptop and a lot of feelings.</p>
+          <div class="opts">
+            <div class="swatches" role="group" aria-label="Colour"><button type="button" class="sw" style="--sw:#d9d4cc" data-color="Natural" data-hex="#d9d4cc" aria-pressed="true" aria-label="Natural"></button><button type="button" class="sw" style="--sw:#141216" data-color="Black" data-hex="#141216" aria-pressed="false" aria-label="Black"></button></div>
+          </div>
+          <button type="button" class="add">Add to bag</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Fan quiz</p>
+      <h2 class="h-wide">which song <span class="b">are you?</span></h2>
+    </div>
+    <div class="quiz" id="quiz-box" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- CAMPAIGN -->
+<section id="campaign">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Our marketing campaign</p>
+      <h2 class="h-wide">the <span class="r">plan</span></h2>
+      <p style="color:var(--dim);max-width:60ch">Our target audience is 15–25-year-olds who discover music on their phones. Drakonik was born online, so we launch him online first, then take him to TV and live stages.</p>
+    </div>
+    <div class="dates">
+      <div class="date-row"><span class="d">LATE 2025</span><h3>goes viral</h3><p>“Stop, Drop, and Roll” takes off on social media.</p></div>
+      <div class="date-row"><span class="d">EARLY 2026</span><h3>signs to strixx</h3><p>Record deal with Strixx Records. “American Fever” released.</p></div>
+      <div class="date-row"><span class="d">01.06.2026</span><h3>album announced</h3><p>Press release sent and the TikTok challenge begins.</p></div>
+      <div class="date-row"><span class="d">JULY 2026</span><h3>tv &amp; radio</h3><p>Music video premiere, late-night TV performance and radio session.</p></div>
+      <div class="date-row"><span class="d">21.08.2026</span><h3>hit the stars</h3><p>Album out, free rooftop show and the tour begins.</p></div>
+    </div>
+    <div class="plan">
+      <div class="plan-col"><h3>online</h3><ul><li><b>TikTok:</b> #StopDropRollChallenge duets and behind-the-scenes clips</li><li><b>Instagram:</b> artwork reveals, stories and countdowns</li><li><b>YouTube:</b> music video premieres and a short documentary</li><li><b>Spotify:</b> pre-save campaign and indie rock playlists</li></ul></div>
+      <div class="plan-col"><h3>tv &amp; radio</h3><ul><li>Live performance on a late-night talk show in release week</li><li>Music TV channel interview and video premiere</li><li>Rock radio “live session” with an acoustic version</li></ul></div>
+      <div class="plan-col"><h3>live &amp; fans</h3><ul><li>Free live-streamed rooftop concert on release night</li><li>Summer music festival slots</li><li>20-date “Hit The Stars” tour</li><li>Merch: black beanies, hoodies and blue vinyl</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="foot-giant" aria-hidden="true">DRAKØNIK</p>
+  <div class="wrap foot-row">
+    <span>Drakonik × Strixx Records</span>
+    <span>Hit The Stars · 21.08.2026</span>
+  </div>
+</footer>
+
+<a class="to-top" href="#home" aria-label="Back to top">↑</a>
+
+<div class="bag-shade" id="bag-shade" hidden></div>
+<aside class="bag" id="bag" hidden aria-label="Shopping bag">
+  <div class="bag-top"><h2>your bag</h2><button type="button" class="ghost" id="bag-close">Close</button></div>
+  <div class="bag-items" id="bag-items"></div>
+  <div class="bag-foot">
+    <div class="bag-total"><span>Total</span><span id="bag-total">$0</span></div>
+    <button type="button" class="add" id="checkout">Checkout</button>
+    <p class="bag-msg" id="bag-msg" aria-live="polite"></p>
+  </div>
+</aside>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s);
+
+  /* Split reveal paragraphs into words */
+  const reveals = [...document.querySelectorAll('.reveal')].map(el => {
+    const hl = (el.dataset.hl || '').toLowerCase().split(',').filter(Boolean);
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute('aria-label', el.textContent.trim());
+    el.innerHTML = words.map(w => {
+      const bare = w.toLowerCase().replace(/[^a-z']/g, '').replace(/'s$/, '');
+      return '<span class="w' + (hl.includes(bare) ? ' hl' : '') + '" aria-hidden="true">' + w + '</span>';
+    }).join(' ');
+    return { el, spans: [...el.querySelectorAll('.w')] };
+  });
+
+  /* Single covers on the cube */
+  const singles = [
+    { k: 'The breakout hit · 2025', t: 'stop, drop, and roll', d: 'High-energy, rebellious and full of adrenaline. The song that started everything when it went viral in late 2025.', l: '“I\'d rather feel it all than feel nothing at all.”', g: 'rgba(224,36,45,.24)' },
+    { k: 'The confession · 2025', t: 'why say why?', d: 'A raw, emotional track about doubt, identity and needing answers. Written in his bedroom at 3 a.m.', l: '“Why say why when nobody\'s listening?”', g: 'rgba(241,237,232,.12)' },
+    { k: 'The anthem · 2026', t: 'american fever', d: 'A bold, anthemic take on modern society, ambition and disillusionment. Made for shouting with a crowd.', l: '“Burning bright in the land of the free-for-all.”', g: 'rgba(224,36,45,.18)' },
+    { k: 'The new album · 21 Aug 2026', t: 'hit the stars', d: 'Ten songs about ambition, escape and the search for something bigger. Keep scrolling for the full tracklist.', l: '“Look up when everything pulls you down.”', g: 'rgba(138,184,255,.25)' }
+  ];
+  const cube = $('#cube'), cubeSec = $('#music'), sticky = $('#cube-sticky');
+  const dots = [...document.querySelectorAll('.dot')];
+  const swapEls = ['#c-kicker', '#c-title', '#c-desc', '#c-lyric'].map($);
+  let current = 0, swapTimer;
+  const showSingle = i => {
+    if (i === current) return;
+    current = i;
+    dots.forEach((d, j) => d.setAttribute('aria-current', String(j === i)));
+    $('#c-num').textContent = String(i + 1).padStart(2, '0');
+    sticky.style.setProperty('--glow', singles[i].g);
+    swapEls.forEach(e => e.classList.add('out'));
+    clearTimeout(swapTimer);
+    swapTimer = setTimeout(() => {
+      const s = singles[i];
+      $('#c-kicker').textContent = s.k;
+      $('#c-title').textContent = s.t;
+      $('#c-desc').textContent = s.d;
+      $('#c-lyric').textContent = s.l;
+      swapEls.forEach(e => e.classList.remove('out'));
+    }, reduce ? 0 : 220);
+  };
+  const cubeRange = () => {
+    const top = cubeSec.getBoundingClientRect().top + scrollY;
+    return { top, len: cubeSec.offsetHeight - innerHeight };
+  };
+  dots.forEach((d, i) => d.addEventListener('click', () => {
+    const r = cubeRange();
+    scrollTo({ top: r.top + r.len * (i / 3) + 2, behavior: reduce ? 'auto' : 'smooth' });
+  }));
+
+  /* Tracklist */
+  const tBtns = [...document.querySelectorAll('.tracks button')];
+  tBtns.forEach((b, i) => b.addEventListener('click', () => {
+    tBtns.forEach(x => x.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true');
+    $('#ti-num').textContent = 'Track ' + String(i + 1).padStart(2, '0');
+    $('#ti-title').textContent = b.dataset.title;
+    $('#ti-desc').textContent = b.dataset.desc;
+  }));
+
+  /* Interview open / close all */
+  const allBtn = $('#qa-all');
+  const qas = [...document.querySelectorAll('.qa details')];
+  allBtn.addEventListener('click', () => {
+    const open = !qas.every(d => d.open);
+    qas.forEach(d => { d.open = open; });
+    allBtn.textContent = open ? 'Close all answers' : 'Open all answers';
+  });
+
+  /* Likes */
+  const base = [248301, 96412, 51230];
+  document.querySelectorAll('.post').forEach((post, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'like';
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', 'false');
+    let n = base[i] || 1000;
+    const draw = () => { btn.innerHTML = '<span class="h">♥</span><span>' + n.toLocaleString('en-US') + '</span>'; btn.setAttribute('aria-label', 'Like, ' + n + ' likes'); };
+    draw();
+    btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') !== 'true';
+      n += on ? 1 : -1;
+      btn.setAttribute('aria-pressed', String(on));
+      draw();
+    });
+    post.querySelector('.post-body').prepend(btn);
+  });
+
+  /* Quiz */
+  const songs = {
+    sdr: { t: 'stop, drop, and roll', img: 'img/cover-sdr.jpg', d: "You're pure energy. You say what you feel, you feel it at full volume and you never back down. You're the breakout hit." },
+    wsw: { t: 'why say why?', img: 'img/cover-wsw.jpg', d: "You think deeply and feel everything. You ask the big questions and you're not afraid of the answers." },
+    af:  { t: 'american fever', img: 'img/cover-af.jpg', d: "You notice what's wrong with the world and you're not quiet about it. Bold, outspoken and ready to change things." },
+    hts: { t: 'hit the stars', img: 'img/cover-hts.jpg', d: "You're a dreamer. You look up when everyone else looks down, and you're aiming for something bigger." }
+  };
+  const Q = [
+    { q: "It's 3 a.m. and you can't sleep. What are you doing?", a: [['Blasting music and jumping around my room', 'sdr'], ['Replaying every conversation from today', 'wsw'], ['Reading the news and getting annoyed', 'af'], ['Sitting by the window looking at the stars', 'hts']] },
+    { q: 'Pick a stage light colour.', a: [['Fire red', 'sdr'], ['Cold white', 'wsw'], ['Flashing red, white and blue', 'af'], ['Midnight blue', 'hts']] },
+    { q: 'Your friends would describe you as…', a: [['Loud and fearless', 'sdr'], ['Deep and thoughtful', 'wsw'], ['Outspoken', 'af'], ['A dreamer', 'hts']] }
+  ];
+  const box = $('#quiz-box');
+  let step = 0, score = {};
+  const renderQuiz = () => {
+    if (step < Q.length) {
+      const q = Q[step];
+      box.innerHTML = '<p class="qz-step">Question ' + (step + 1) + ' of ' + Q.length + '</p>'
+        + '<div class="qz-bar"><i style="width:' + ((step + 1) / Q.length * 100) + '%"></i></div>'
+        + '<h3 class="qz-q">' + q.q + '</h3>'
+        + '<div class="qz-opts">' + q.a.map(([t, k]) => '<button type="button" class="qz-opt" data-k="' + k + '">' + t + '</button>').join('') + '</div>';
+    } else {
+      const best = Object.keys(score).sort((a, b) => score[b] - score[a])[0];
+      const s = songs[best];
+      box.innerHTML = '<div class="qz-result"><img src="' + s.img + '" alt="' + s.t + ' cover">'
+        + '<div><p class="qz-step">Your Drakonik song is</p><h3 class="qz-title">' + s.t + '</h3><p>' + s.d + '</p>'
+        + '<button type="button" class="ghost qz-again">Take the quiz again</button></div></div>';
+    }
+  };
+  box.addEventListener('click', e => {
+    const opt = e.target.closest('.qz-opt');
+    if (opt) {
+      score[opt.dataset.k] = (score[opt.dataset.k] || 0) + 1;
+      step++;
+      renderQuiz();
+      const first = box.querySelector('button');
+      if (first) first.focus({ preventScroll: true });
+      return;
+    }
+    if (e.target.closest('.qz-again')) { step = 0; score = {}; renderQuiz(); }
+  });
+  renderQuiz();
+
+  /* Merch shop */
+  const bag = [];
+  const bagEl = $('#bag'), shade = $('#bag-shade'), bagItems = $('#bag-items'), bagMsg = $('#bag-msg'), bagBtn = $('#bag-open');
+  const money = n => '$' + n.toLocaleString('en-US');
+  const drawBag = () => {
+    const count = bag.reduce((s, it) => s + it.qty, 0);
+    const total = bag.reduce((s, it) => s + it.qty * it.price, 0);
+    $('#bag-count').textContent = count;
+    bagBtn.setAttribute('aria-label', 'Open shopping bag, ' + count + ' items');
+    $('#bag-total').textContent = money(total);
+    if (!bag.length) {
+      bagItems.innerHTML = '<p class="bag-empty">Your bag is empty. Add a hoodie, tee or vinyl from the merch section.</p>';
+      return;
+    }
+    bagItems.innerHTML = bag.map((it, i) =>
+      '<div class="bag-item"><div><b>' + it.name + '</b><br><small>' + it.detail + '</small></div><span class="price">' + money(it.price * it.qty) + '</span>'
+      + '<div class="qty"><button type="button" data-i="' + i + '" data-d="-1" aria-label="One less">−</button><span>' + it.qty + '</span><button type="button" data-i="' + i + '" data-d="1" aria-label="One more">+</button></div></div>'
+    ).join('');
+  };
+  const openBag = () => { shade.hidden = false; bagEl.hidden = false; bagMsg.textContent = ''; $('#bag-close').focus(); };
+  const closeBag = () => { shade.hidden = true; bagEl.hidden = true; bagBtn.focus({ preventScroll: true }); };
+  bagBtn.addEventListener('click', openBag);
+  $('#bag-close').addEventListener('click', closeBag);
+  shade.addEventListener('click', closeBag);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !bagEl.hidden) closeBag(); });
+  bagItems.addEventListener('click', e => {
+    const b = e.target.closest('button[data-i]');
+    if (!b) return;
+    const it = bag[+b.dataset.i];
+    it.qty += +b.dataset.d;
+    if (it.qty <= 0) bag.splice(+b.dataset.i, 1);
+    drawBag();
+  });
+  $('#checkout').addEventListener('click', () => {
+    bagMsg.textContent = bag.length
+      ? 'This is a demo shop for a school project, so no real orders or payments are taken. Thanks for supporting Drakonik! 🤘'
+      : 'Add something to your bag first.';
+  });
+  document.querySelectorAll('.prod').forEach(prod => {
+    const art = prod.querySelector('.art');
+    const pick = sel => prod.querySelectorAll(sel).forEach(btn => btn.addEventListener('click', () => {
+      prod.querySelectorAll(sel).forEach(x => x.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      if (btn.dataset.hex) art.style.setProperty('--c', btn.dataset.hex);
+    }));
+    pick('.sw');
+    pick('.sz');
+    const add = prod.querySelector('.add');
+    add.addEventListener('click', () => {
+      const color = prod.querySelector('.sw[aria-pressed="true"]');
+      const size = prod.querySelector('.sz[aria-pressed="true"]');
+      const detail = [color && color.dataset.color, size && 'Size ' + size.textContent].filter(Boolean).join(' · ') || 'Standard';
+      const name = prod.dataset.name, price = +prod.dataset.price;
+      const found = bag.find(it => it.name === name && it.detail === detail);
+      if (found) found.qty++; else bag.push({ name, detail, price, qty: 1 });
+      drawBag();
+      add.textContent = 'Added ✓';
+      add.classList.add('done');
+      bagBtn.classList.remove('bump'); void bagBtn.offsetWidth; bagBtn.classList.add('bump');
+      setTimeout(() => { add.textContent = 'Add to bag'; add.classList.remove('done'); }, 1400);
+    });
+  });
+  drawBag();
+
+  /* Active menu pill */
+  const links = [...document.querySelectorAll('.pills .pill')];
+  const pillBar = $('.pills');
+  const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const a = byId.get(e.target.id === 'lyrics' ? 'music' : e.target.id);
+        if (!a) return;
+        links.forEach(l => l.classList.remove('active'));
+        a.classList.add('active');
+        pillBar.scrollTo({ left: a.parentElement.offsetLeft - pillBar.offsetLeft - 20, behavior: 'smooth' });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section[id]').forEach(s => io.observe(s));
+  }
+
+  /* Scroll-driven effects */
+  const prog = $('#prog'), toTop = $('.to-top'), giant = $('#giant'), heroImg = $('#hero-img'), albumGiant = $('#album-giant'), album = $('#album');
+  let rot = 0, target = 0, ticking = false;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const frame = () => {
+    ticking = false;
+    const y = scrollY, vh = innerHeight;
+    const max = document.documentElement.scrollHeight - vh;
+    prog.style.width = (max > 0 ? y / max * 100 : 0) + '%';
+    toTop.classList.toggle('show', y > 700);
+
+    if (!reduce) {
+      giant.style.transform = 'translateX(' + (-y * 0.45) + 'px)';
+      heroImg.style.transform = 'scale(1.06) translateY(' + (y * 0.18) + 'px)';
+      const ar = album.getBoundingClientRect();
+      albumGiant.style.transform = 'translateX(' + ((ar.top - vh) * 0.35) + 'px)';
+    }
+
+    reveals.forEach(({ el, spans }) => {
+      const r = el.getBoundingClientRect();
+      const p = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0, 1);
+      const lit = Math.round(p * spans.length);
+      spans.forEach((s, i) => s.classList.toggle('on', i < lit));
+    });
+
+    const cr = cubeRange();
+    const p = cr.len > 0 ? clamp((y - cr.top) / cr.len, 0, 1) : 0;
+    target = p * 270;
+    showSingle(Math.round(p * 3));
+    spin();
+  };
+  let spinning = false;
+  const spin = () => {
+    if (spinning) return;
+    spinning = true;
+    const step = () => {
+      rot += (target - rot) * (reduce ? 1 : 0.14);
+      if (Math.abs(target - rot) < 0.05) rot = target;
+      const wobble = Math.sin(rot / 270 * Math.PI * 3) * 8;
+      cube.style.transform = 'rotateX(' + (-14 + wobble * 0.4) + 'deg) rotateY(' + (-rot) + 'deg) rotateZ(' + (wobble * 0.3) + 'deg)';
+      if (rot !== target) requestAnimationFrame(step); else spinning = false;
+    };
+    requestAnimationFrame(step);
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  frame();
+  cube.style.transform = 'rotateX(-14deg) rotateY(0deg)';
+  spin();
+})();
+</script>
+
+</body>
+</html>
